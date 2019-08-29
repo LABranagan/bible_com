@@ -1,2 +1,10 @@
 # Default ignored files
 /workspace.xml
+
+# PyCharm
+.idea/
+bible_com/.idea/
+# Datasource local storage ignored files
+/dataSources/
+# Datasource local storage ignored files
+/dataSources.local.xml
