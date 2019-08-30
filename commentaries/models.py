@@ -21,7 +21,7 @@ class KeyWord(models.Model):
         ordering = ('transliteration', 'word',)
 
     def __str__(self):
-        return self.transliteration + " - " + self.word
+        return self.transliteration + " - " + self.word + " - " + self.language
 
 
 class Post(models.Model):
@@ -48,13 +48,14 @@ class Post(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='draft')
-    keyWords = models.ForeignKey(KeyWord, on_delete=models.CASCADE, related_name='words')
-    # TODO:  Want to allow multiple key words
+    keyWords = models.ManyToManyField(KeyWord, related_name='words')
 
     class Meta:
         ordering = ('-publish',)
 
     def __str__(self):
         return self.title
+
+# TODO:  Save and retrieve database to CSV or Excel
 
 # TODO Load and save lists of commentaries
