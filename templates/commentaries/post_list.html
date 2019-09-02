@@ -1,0 +1,12 @@
+<!-- templates/commentaries/post_list.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+    <ul>
+        {%  for post in posts %}
+            <a href="{%  url 'update_post' post.slug %}">
+                <li> {{ post.title }}</li>
+            </a>
+        {%  endfor %}
+    </ul>
+{% endblock %}

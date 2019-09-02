@@ -41,9 +41,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'commentaries.apps.CommentariesConfig',
     'users.apps.UsersConfig',
+    'crispy_forms',
 ]
 
-AUTH_USER_MODEL = 'users.CustomUser'  # new
+AUTH_USER_MODEL = 'users.CustomUser'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
