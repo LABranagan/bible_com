@@ -6,7 +6,8 @@ from .models import Thought
 class ThoughtsListForm(forms.Form):
     class Meta(forms.ModelForm):
         model = Thought
-        fields = ('title', 'body')
+        fields = ('title', 'reference', 'verseText', 'author', 'body',
+                  'updated', 'status', 'keyWords')
 
 
 class ThoughtCreationForm(forms.Form):
@@ -18,4 +19,5 @@ class ThoughtCreationForm(forms.Form):
 class ThoughtUpdateForm(forms.ModelForm):
     class Meta:
         model = Thought
-        fields = ['title', 'reference', 'body']
+        fields = ['title', 'reference', 'verseText', 'author', 'body',
+                  'status', 'keyWords']

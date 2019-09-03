@@ -12,7 +12,7 @@ def list_thoughts(request):
 def update_thought(request, slug):
     thought = Thought.objects.get(slug=slug)
     form = ThoughtUpdateForm(request.POST or None, instance=thought)
-    context = {'form':form}
+    context = {'form': form}
     # form = PostUpdateForm(request.POST, instance=post)
 
     if form.is_valid():

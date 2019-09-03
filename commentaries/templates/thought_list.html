@@ -6,9 +6,11 @@
 {% block content %}
     <ul>
         {%  for thought in thoughts %}
-            <a href="{%  url 'commentaries:update_thought' thought.slug %}">
-                <li> {{ thought.title }}</li>
-            </a>
+            <li>
+                <a href="{%  url 'commentaries:update_thought' thought.slug %}">
+                        {{ thought.title }} </a>
+                {{thought.reference}}{{thought.status}}{{thought.updated }}
+            </li>
         {%  endfor %}
     </ul>
 {% endblock %}
