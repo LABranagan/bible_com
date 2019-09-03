@@ -3,9 +3,9 @@
 
 {% block content %}
     <ul>
-        {%  for post in posts %}
-            <a href="{%  url 'update_post' post.slug %}">
-                <li> {{ post.title }}</li>
+        {%  for thought in thoughts %}
+            <a href="{%  url 'commentaries:update_thought' thought.slug %}">
+                <li> {{ thought.title }}</li>
             </a>
         {%  endfor %}
     </ul>

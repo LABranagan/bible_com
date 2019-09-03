@@ -1,0 +1,14 @@
+<!-- templates/commentaries/thought_list.html -->
+{% extends 'base.html' %}
+
+{% block title %}List{% endblock %}
+
+{% block content %}
+    <ul>
+        {%  for thought in thoughts %}
+            <a href="{%  url 'commentaries:update_thought' thought.slug %}">
+                <li> {{ thought.title }}</li>
+            </a>
+        {%  endfor %}
+    </ul>
+{% endblock %}

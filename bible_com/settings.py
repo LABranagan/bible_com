@@ -39,9 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crispy_forms',
     'commentaries.apps.CommentariesConfig',
     'users.apps.UsersConfig',
-    'crispy_forms',
 ]
 
 AUTH_USER_MODEL = 'users.CustomUser'

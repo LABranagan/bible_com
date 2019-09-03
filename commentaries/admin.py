@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import KeyWord, Post
+from .models import KeyWord, Thought
 
 # Register your models here.
 @admin.register(KeyWord)
@@ -10,7 +10,7 @@ class KeyWordAdmin(admin.ModelAdmin):
     ordering = ('transliteration', 'word', 'language')
 
 
-@admin.register(Post)
+@admin.register(Thought)
 class PostAdmin(admin.ModelAdmin):
     list_display = ('title', 'reference', 'author', 'publish', 'status')
     list_filter = ('status', 'created', 'publish', 'author')

@@ -1,10 +1,12 @@
 # commentaries/urls.py
 from django.urls import path
-from .views import PostCreateView, PostListView, list_posts, update_post
+from .views import ThoughtCreateView, ThoughtsListView, list_thoughts, update_thought
+
+app_name = 'commentaries'
 
 urlpatterns = [
-    # path('list/', PostListView.as_view(), name='list_posts'),
-    path('list/', list_posts, name='list_posts'),
-    path('update/<slug:slug>', update_post, name='update_post'),
-    path('add/', PostCreateView.as_view(), name='create_post'),
+    # path('list/', ThoughtsListView.as_view(), name='list_thoughts'),
+    path('list/', list_thoughts, name='listall_thoughts'),
+    path('update/<slug:slug>', update_thought, name='update_thought'),
+    path('add/', ThoughtCreateView.as_view(), name='create_thought'),
 ]

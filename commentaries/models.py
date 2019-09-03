@@ -24,7 +24,7 @@ class KeyWord(models.Model):
         return self.transliteration + " - " + self.word + " - " + self.language
 
 
-class Post(models.Model):
+class Thought(models.Model):
     """Model:  title,
                reference,
                verseText,

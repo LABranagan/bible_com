@@ -1,15 +1,21 @@
 # commentaries/forms.py
 from django import forms
-from .models import Post
+from .models import Thought
 
 
-class PostCreationForm(forms.Form):
+class ThoughtsListForm(forms.Form):
     class Meta(forms.ModelForm):
-        model = Post
+        model = Thought
         fields = ('title', 'body')
 
 
-class PostUpdateForm(forms.ModelForm):
+class ThoughtCreationForm(forms.Form):
+    class Meta(forms.ModelForm):
+        model = Thought
+        fields = ('title', 'body')
+
+
+class ThoughtUpdateForm(forms.ModelForm):
     class Meta:
-        model = Post
+        model = Thought
         fields = ['title', 'reference', 'body']
