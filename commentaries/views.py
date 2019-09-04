@@ -6,7 +6,7 @@ from .forms import ThoughtCreationForm, ThoughtUpdateForm, ThoughtsListForm
 
 def list_thoughts(request):
     thoughts = Thought.objects.all()
-    return render(request, 'thought_list.html', {'thoughts':thoughts})
+    return render(request, 'thought_listall.html', {'thoughts':thoughts})
 
 
 def update_thought(request, slug):
@@ -35,6 +35,6 @@ class ThoughtCreateView(CreateView):
     form_class = ThoughtCreationForm
     # fields = ('title', 'reference', 'verseText', 'body', 'status', 'keyWords')
     template_name = 'thought_form.html'
-
+#TODO:  Create view needs correction
 
 #TODO:  CRUD (create, read, update, delete) for each entry

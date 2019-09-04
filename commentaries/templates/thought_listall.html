@@ -1,12 +1,12 @@
-<!-- templates/commentaries/thought_list.html -->
+<!-- templates/commentaries/thought_listall.html -->
 {% extends 'base.html' %}
 
 {% block title %}List{% endblock %}
 
 {% block content %}
     <ul>
-        {%  for thought in object_list %}
-            <li style="margin: 10px 0;">
+        {%  for thought in thoughts %}
+            <li>
                 <a href="{%  url 'commentaries:update_thought' thought.slug %}">
                         {{ thought.title }} </a>
                 &emsp;{{thought.reference}}&emsp;{{thought.status}}&emsp;{{thought.updated }}
@@ -15,7 +15,4 @@
             <li>No thoughts stored in database.</li>
         {% endfor %}
     </ul>
-    <a href="{%  url 'commentaries:create_thought' %}">New post</a>
 {% endblock %}
-
-
