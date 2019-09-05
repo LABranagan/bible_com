@@ -5,7 +5,7 @@
 
 {% block content %}
     <ul>
-        {%  for thought in object_list %}
+        {%  for thought in thoughts %}
             <li style="margin: 10px 0;">
                 <a href="{%  url 'commentaries:update_thought' thought.slug %}">
                         {{ thought.title }} </a>
@@ -16,6 +16,8 @@
         {% endfor %}
     </ul>
     <a href="{%  url 'commentaries:create_thought' %}">New post</a>
+    <p>----------------------------------------------</p>
+    <a href="{% url 'home' %}">Home</a>
 {% endblock %}
 
 

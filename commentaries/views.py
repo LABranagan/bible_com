@@ -26,15 +26,16 @@ class ThoughtsListView(ListView):
     # queryset = Thought.objects.all()
     # form_class = ThoughtsListForm
     model = Thought
-    # context_object_name = 'thoughts'
+    context_object_name = 'thoughts'
     # paginate_by = 5
     template_name = 'thought_list.html'
 
 
 class ThoughtCreateView(CreateView):
     form_class = ThoughtCreationForm
-    # fields = ('title', 'reference', 'verseText', 'body', 'status', 'keyWords')
+    fields = ('title', 'reference', 'verseText', 'body', 'status', 'keyWords')
     template_name = 'thought_form.html'
+
 #TODO:  Create view needs correction
 
 #TODO:  CRUD (create, read, update, delete) for each entry
