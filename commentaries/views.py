@@ -32,9 +32,14 @@ class ThoughtsListView(ListView):
 
 
 class ThoughtCreateView(CreateView):
-    form_class = ThoughtCreationForm
-    fields = ('title', 'reference', 'verseText', 'body', 'status', 'keyWords')
+    model = Thought
+    # form_class = ThoughtCreationForm
+    fields = ('title', 'slug', 'reference', 'verseText', 'body', 'status', 'keyWords')
     template_name = 'thought_form.html'
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super(ThoughtCreateView, self).form_valid(form)
 
 #TODO:  Create view needs correction
 

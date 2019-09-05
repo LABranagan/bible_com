@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 from django.utils import timezone
 from django.contrib.auth.models import User
 from bible_com.settings import AUTH_USER_MODEL
@@ -55,6 +56,11 @@ class Thought(models.Model):
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse('commentaries:update_thought', kwargs={'pk': self.pk}
+
+# TODO:  Correct error in get_absolute_url()
 
 # TODO:  Save and retrieve database to CSV or Excel
 
