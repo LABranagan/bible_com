@@ -43,6 +43,7 @@ class ThoughtCreateView(CreateView):
 
 class ThoughtDetail(DetailView):
     model = Thought
+    queryset = Thought.objects.all()
 
     def get_object(self):
         # Call superclass

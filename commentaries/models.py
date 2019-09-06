@@ -49,7 +49,7 @@ class Thought(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='draft')
-    keyWords = models.ManyToManyField(KeyWord, related_name='words')
+    keyWords = models.ManyToManyField(KeyWord, related_name='words', null=True)
 
     class Meta:
         ordering = ('-publish',)
@@ -58,7 +58,7 @@ class Thought(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('ThoughtDetail', kwargs={'pk': self.pk})
+        return reverse('commentaries:thought_detail', kwargs={'slug': self.slug})
 
 # TODO:  Correct error in get_absolute_url()
 
