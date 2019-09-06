@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.views.generic import ListView, CreateView
+from django.views.generic import ListView, CreateView, DetailView
 from .models import Thought
 from .forms import ThoughtCreationForm, ThoughtUpdateForm, ThoughtsListForm
 
@@ -17,7 +17,7 @@ def update_thought(request, slug):
 
     if form.is_valid():
         form.save()
-        return redirect('commentaries:listall_thoughts')
+        return redirect('commentaries:list_thoughts')
 
     return render(request, 'thought_form.html', context)
 
@@ -40,6 +40,14 @@ class ThoughtCreateView(CreateView):
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super(ThoughtCreateView, self).form_valid(form)
+
+class ThoughtDetail(DetailView):
+    model = Thought
+
+    def get_object(self):
+        # Call superclass
+        object = super(ThoughtDetail, self).get_object()
+        return object
 
 #TODO:  Create view needs correction
 

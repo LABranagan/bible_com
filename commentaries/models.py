@@ -58,7 +58,7 @@ class Thought(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('commentaries:update_thought', kwargs={'pk': self.pk}
+        return reverse('ThoughtDetail', kwargs={'pk': self.pk})
 
 # TODO:  Correct error in get_absolute_url()
 

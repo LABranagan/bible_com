@@ -7,7 +7,7 @@
     <ul>
         {%  for thought in thoughts %}
             <li>
-                <a href="{%  url 'commentaries:update_thought' thought.slug %}">
+                <a href="{%  url 'commentaries:update_thought_view' thought.slug %}">
                         {{ thought.title }} </a>
                 &emsp;{{thought.reference}}&emsp;{{thought.status}}&emsp;{{thought.updated }}
             </li>
