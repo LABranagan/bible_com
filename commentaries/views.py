@@ -30,6 +30,7 @@ class ThoughtsListView(ListView):
     # paginate_by = 5
     template_name = 'thought_list.html'
 
+# TODO:  Some thought detail views find (4) items instead of 1 ??
 
 class ThoughtCreateView(CreateView):
     model = Thought
