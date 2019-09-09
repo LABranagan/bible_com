@@ -49,7 +49,7 @@ class Thought(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='draft')
-    keyWords = models.ManyToManyField(KeyWord, related_name='words', null=True)
+    keyWords = models.ManyToManyField(KeyWord, related_name='words', blank=True)
 
     class Meta:
         ordering = ('-publish',)
