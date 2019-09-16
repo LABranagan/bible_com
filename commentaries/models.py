@@ -24,6 +24,9 @@ class KeyWord(models.Model):
     def __str__(self):
         return self.transliteration + " - " + self.word + " - " + self.language
 
+    def get_absolute_url(self):
+         return reverse('commentaries:keyword_list')
+
 
 class Thought(models.Model):
     """Model:  title,

@@ -1,0 +1,23 @@
+<!-- templates/commentaries/thought_list.html -->
+{% extends 'base.html' %}
+
+{% block title %}Key Words{% endblock %}
+
+{% block dash_content %}
+    <ul>
+        {%  for word in words %}
+            <li style="margin: 10px 0;">
+                <a href="{%  url 'commentaries:update_thought_view' word.pk %}">
+                        {{ word.transliteration }} </a>
+                &emsp;{{word.word}}&emsp;{{word.language}}&emsp;{{word.definition}}&emsp;
+            </li>
+        {% empty %}
+            <li>No key words stored in database.</li>
+        {% endfor %}
+    </ul>
+    <a href="{%  url 'commentaries:create_keyword' %}">New keyword</a>
+    <p>----------------------------------------------</p>
+    <a href="{% url 'home' %}">Home</a>
+{% endblock %}
+
+

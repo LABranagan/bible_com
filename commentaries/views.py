@@ -1,7 +1,25 @@
 from django.shortcuts import render, redirect
+from django.urls import reverse_lazy
+from django.views import generic
 from django.views.generic import ListView, CreateView, DetailView
-from .models import Thought
+from .models import Thought,KeyWord
 from .forms import ThoughtCreationForm, ThoughtUpdateForm, ThoughtsListForm
+
+
+class ListKeyword(ListView):
+    model=KeyWord
+    context_object_name = 'words'
+    fields=['transliteration','word','language','definition']
+    template_name = 'list_keywords.html'
+
+
+class CreateWord(CreateView):
+    model=KeyWord
+    fields=['transliteration','word','language','definition']
+    template_name = 'keyword_create.html'
+
+    def form_valid(self, form):
+        return super(CreateWord, self).form_valid(form)
 
 
 def list_thoughts(request):
